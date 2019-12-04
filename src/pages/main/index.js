@@ -1,6 +1,10 @@
 import React ,{Fragment,Component} from "react";
-import CarouselMain from "../../components/carousel/index";
+import Gallery from "../../components/gallery/gallery";
+import {} from 'reactstrap';
 import TopNews from "../../components/topNews/index";
+import Scss from "./../../scss/style.scss"
+
+
 
 export default class HomePage extends Component{
   constructor(props){
@@ -11,7 +15,13 @@ export default class HomePage extends Component{
   render(){
     return(
       <Fragment>
-        <CarouselMain className={"body_carousel"}/>
+
+        <Gallery/>
+        <div className="text_main">
+          <h1>{"Каталог мебели с ценами и фотo"}</h1>
+          <p>Более 12.000 актуальных предложений с ценами и фото. Более 150 продавцов!</p>
+          <p>Выбирайте, звоните, покупайте – мы поможем вам найти лучшее.</p>
+        </div>
         <TopNews count={10}/>
       </Fragment>
     )

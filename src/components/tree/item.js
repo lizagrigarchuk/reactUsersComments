@@ -9,9 +9,11 @@ export default class ItemTree extends Component{
     super(props);
     this.state = {
       user:undefined,
-      isOpen: false
+      isOpen: false,
     }
+
   }
+
 
   render(){
     return(
@@ -39,8 +41,14 @@ export default class ItemTree extends Component{
                   <Badge color={"warning"} onClick={()=>this.done(this.props.data.id)} >
                     {"finish"}
                   </Badge>
+
                 :null
               }
+
+              {/*
+              <Badge color={"danger"} data-id={this.props.data.id} onClick={this.removeItem}>
+                {"remove"}
+              </Badge>*/}
             </div>
           </CardBody>
           {this.state.isOpen ?
@@ -57,6 +65,7 @@ export default class ItemTree extends Component{
   }
 
   done = (id) =>{
+
     this.props.done(id);
   }
 
@@ -67,6 +76,9 @@ export default class ItemTree extends Component{
   }
 
   userInfo = (id) =>{
+    //let id=e.target.getAttribute("data-id")
+    //this.props.remove(id);
+
       fetch(`https://jsonplaceholder.typicode.com/users?id=${id}`)
         .then(data=>data.json()).then(user=>{
             this.setState({

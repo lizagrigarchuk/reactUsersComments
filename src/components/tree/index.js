@@ -1,19 +1,21 @@
 import React ,{Fragment,Component} from "react";
 import { Button, ButtonGroup } from 'reactstrap';
 import ItemTree from './item';
-import Header from './../../includes/header'
-import Modal from './../modal/index';
+import Header from '../../includes/header/header'
 
 export default class Tree extends Component{
   constructor(props){
+    //console.log("-----const");
     super(props);
+    this.x = 10;
     this.state ={
         data: [],
         copy : [],
-        info: null,
-        isOpen: false
+        info: null
     }
+
   }
+
 
   render(){
     return(
@@ -21,8 +23,6 @@ export default class Tree extends Component{
           <Header count={this.state.copy.length}
                   done={this.sortDone}
                   all={this.sortAll}
-                  add={this.add}
-                  sort={this.sort}
                   undone={this.sortUndone}
                   />
           {
@@ -32,7 +32,6 @@ export default class Tree extends Component{
               done={this.done}
               remove={this.removeItem} />)
           }
-
       </Fragment>
     )
   }
@@ -46,21 +45,12 @@ export default class Tree extends Component{
         }))
   }
 
-  add =()=>{
-    console.log("add");
-  }
-
-  sort =()=>{
-
-    console.log("sort");
-  }
-
   removeItem = (id) =>{
     let info = this.state.data.filter((item,i) => item.id!=id);
-    this.setState({
-      data: info,
-      copy: info
-    })
+     this.setState({
+       data: info,
+       copy: info
+     })
   }
 
   done = (id) =>{
@@ -102,9 +92,4 @@ export default class Tree extends Component{
     })
   }
 
-  closeModal = () =>{
-    this.setState({
-      isOpen:!this.state.isOpen
-    })
-  }
 }

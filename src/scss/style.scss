@@ -1,15 +1,15 @@
 
 body{
-  background: url("../images/back.png");
+  background: url("../images/back.jpg");
   background-attachment: fixed;
   background-size: cover;
-  background: url(http://static1.squarespace.com/static/563aa723e4b0ab42b380a746/56b6a49f40261daffbb7784e/5c61cb24104c7b0b87f90ca2/1551099644821/Screen+Shot+2019-02-11+at+2.29.08+PM.png?format=1500w);
 }
 
 
 a{
-  font-size: 20px;
-  color: yellow;
+  font-size: 30px;
+  color: black;
+  padding-right: 20px;
   margin: 5px;
 }
 
@@ -18,8 +18,10 @@ p{
 }
 .nav{
   font-size: 28px;
-  font-weight: 700;
-
+  font-weight: bold;
+  background: #dad2cf;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .div_flex{
@@ -71,12 +73,12 @@ justify-content: space-around;
 }
 
 .text_main{
-  color:rgba(54, 134, 214, 1);
+  color:#100052;
   font-weight: bold;
   text-align: center;
   text-shadow: 1px 0 4px #fff;
   p{
     font-size: 23px;
-    color: aqua;
+    color: #feffc6;
     text-shadow: 1px 0 4px #000  }
 }

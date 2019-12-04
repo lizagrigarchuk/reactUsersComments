@@ -18,13 +18,13 @@ export default class TopNews extends Component{
     render(){
 
         return(
-            <Fragment>
+            <div className="div_flex">
                 {
                     this.state.news.map((item,i)=>
-                    <ItemList key={i} item={item}/>
+                    <ItemList key={i} item={item} className={"item_top_news"}/>
                     )
                 }
-            </Fragment>
+            </div>
         )
     }
 

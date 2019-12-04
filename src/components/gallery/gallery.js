@@ -5,27 +5,21 @@ import {Carousel,
   CarouselIndicators,
   CarouselCaption} from 'reactstrap';
 
-  import Img1 from '../../images/gall1.jpg';
-  import Img2 from '../../images/gall2.jpg';
-  import Img3 from '../../images/gall3.jpg';
-
-
-
   const items = [
     {
-      src: 'https://img1.goodfon.ru/original/2560x1920/7/f0/plyazh-more-yarkiy-svet.jpg',
-      altText: 'Slide 1',
-      caption: 'Slide 1'
+      src: 'https://www.valderamobili.ru/images/home/intro_0.jpg',
+      altText: 'Любая мебель для Вас',
+      caption: 'для спальни'
     },
     {
-      src: 'https://wallbox.ru/resize/1680x1050/wallpapers/main/201121/0eb56b45fdfa6535cf1d0f1740cd0af0.jpg',
-      altText: 'Slide 2',
-      caption: 'Slide 2'
+      src: 'https://manhattancomfort.ru/slides/living/1.jpg',
+      altText: 'Любая мебель для Вас',
+      caption: 'для гостинной'
     },
     {
-      src: 'https://img.fonwall.ru/o/97/tropiki-more-plyaj-ostrov.jpg',
-      altText: 'Slide 3',
-      caption: 'Slide 3'
+      src: 'https://artmebel.center/images/kat/modern/aleksandro/a.jpg',
+      altText: 'Любая мебель для Вас',
+      caption: 'для кухни'
     }
   ];
 export default class Gallery extends Component{
@@ -75,7 +69,7 @@ export default class Gallery extends Component{
               key={item.src}
             >
               <img src={item.src} alt={item.altText} className={"img_style"}/>
-              <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+              <CarouselCaption captionText={item.caption} captionHeader={item.altText} />
             </CarouselItem>
           );
         });

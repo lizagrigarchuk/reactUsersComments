@@ -1,6 +1,6 @@
 import React ,{Fragment,Component} from "react";
-import { Button, ButtonGroup } from 'reactstrap';
-
+import { Nav, NavItem, NavLink  } from 'reactstrap';
+import { Link } from "react-router-dom";
 
 export default class Header extends Component{
   constructor(props){
@@ -10,16 +10,20 @@ export default class Header extends Component{
   render(){
     return(
       <Fragment>
-          <ButtonGroup>
-               <Button color="success" onClick={this.props.add}>add</Button>
-               <Button color="success" onClick={this.props.sort}>sort</Button>
-               <Button color="success">{this.props.count}</Button>
-          </ButtonGroup>
-          <ButtonGroup>
-               <Button color="primary" onClick={this.props.all}>all</Button>
-               <Button color="success" onClick={this.props.done}>done</Button>
-               <Button color="danger"  onClick={this.props.undone}>undone</Button>
-          </ButtonGroup>
+        <Nav>
+          <NavItem>
+            <Link to="/">Главная</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/login">Авторизация</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/news">Новости</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/profile">Профиль</Link>
+          </NavItem>
+        </Nav>
       </Fragment>
     )
   }

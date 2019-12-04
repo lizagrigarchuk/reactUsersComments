@@ -7,9 +7,9 @@ console.log(NODE_ENV);
 const CONFIG = {
     entry: './src/app.js',
     output: {
-        path: PATH.resolve(__dirname, './../localhost/js'),
+        path: PATH.resolve(__dirname, './dist/js'),
         filename: 'app.js',
-        //publicPath : "http://localhost:8080/dist/js/"
+        publicPath : "/js/"
     },
 
     devServer: {
@@ -27,10 +27,8 @@ const CONFIG = {
 
 
     module:{
-        rules:[   //загрузчик для jsx
+        rules:[
             {
-
-
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
@@ -59,7 +57,6 @@ const CONFIG = {
                     outputPath: 'images'
                 }
             }
-
         ]
     },
 

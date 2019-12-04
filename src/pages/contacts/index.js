@@ -1,10 +1,10 @@
 import React ,{Fragment,Component} from "react";
-import {} from 'reactstrap';
 import Body from '../../includes/body/index';
 import Map from '../../components/map/index';
+import {connect} from "react-redux";
 
 
-export default class CatalogPage extends Component{
+class CatalogPage extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -39,6 +39,12 @@ export default class CatalogPage extends Component{
                     this.state.show != undefined ?
                         <Map item={this.state.maps[this.state.show]}></Map>: null
                 }
+
+                    <form onSubmit={this.handleSubmit}>
+                        <input type={"text"} name={"name"} placeholder={"введите название"}/>
+                        <input type={"text"} name={"text"} placeholder={"введите текст"}/>
+                        <button>Добавить</button>
+                    </form>
                 </Body>
             </Fragment>
         )
@@ -47,5 +53,27 @@ export default class CatalogPage extends Component{
         this.setState({show:id});
     }
 
+    handleSubmit = (e) => {
+
+        e.preventDefault();
+        var formData = new FormData(e.currentTarget)
+
+        this.props.dispatch({
+            type: "ADD",
+            data : {
+                name: formData.get("name"),
+                text: formData.get("text")
+            }
+        })
+
+
+    }
+
 
 }
+
+const setStateToProps = (store) =>{
+    return {}
+}
+
+export default connect(setStateToProps)(CatalogPage)

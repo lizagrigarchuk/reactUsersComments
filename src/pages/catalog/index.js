@@ -1,23 +1,44 @@
 import React ,{Fragment,Component} from "react";
-import {} from 'reactstrap';
+import {connect} from 'react-redux';
 import Body from '../../includes/body/index';
 
 
-export default class CatalogPage extends Component{
+class CatalogPage extends Component{
     constructor(props){
         super(props);
     }
 
 
     render(){
+        console.log(this.props.items);
         return(
             <Fragment>
                 <Body>
                 <h1>{"Catalog page"}</h1>
+                {this.props.items.map((item,i)=>
+                    <div key={i}>
+                        <p>{item.name}</p>
+                        <p>{item.text}</p>
+                    </div>
+                )}
+
+                {this.props.comments.map((item,i)=>
+                    <div key={i}>
+                        <p>{item.id}</p>
+                        <p>{item.text}</p>
+                    </div>
+                )}
                 </Body>
             </Fragment>
         )
     }
-
-
 }
+
+const setStateToProps = (store) =>{
+    return {
+        items: store.items,
+        comments: store.comments
+    }
+}
+
+export default connect(setStateToProps)(CatalogPage)

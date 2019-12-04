@@ -1,0 +1,82 @@
+
+body{
+  background: url("../images/back.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background: url(http://static1.squarespace.com/static/563aa723e4b0ab42b380a746/56b6a49f40261daffbb7784e/5c61cb24104c7b0b87f90ca2/1551099644821/Screen+Shot+2019-02-11+at+2.29.08+PM.png?format=1500w);
+}
+
+
+a{
+  font-size: 20px;
+  color: yellow;
+  margin: 5px;
+}
+
+p{
+  font-weight: bold;
+}
+.nav{
+  font-size: 28px;
+  font-weight: 700;
+
+}
+
+.div_flex{
+display: flex;
+margin: 5px;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+.img_style {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+.item_top_news{
+  background:rgba(12, 43, 99, 0.5);
+  color:white;
+  text-align: center;
+  width: 30%;
+  margin: 5px;
+}
+.item_news{
+  background:rgba(12, 43, 99, 0.7);
+  color:white;
+  text-align: center;
+  margin: 5px;
+}
+.item_info_one{
+
+  background:rgba(12, 43, 99, 0.7);
+  color:rgb(255, 255, 255);
+  text-align: center;
+  margin: 5px;
+}
+
+.item_info{
+
+  background:rgba(214, 224, 187, 0.6);
+  color:rgb(71, 0, 0);
+  font-style: italic;
+  margin: 5px;
+}
+
+.pagination{
+  background: rgb(164, 176, 199);
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 75, 75);
+  font-weight: bold;
+}
+
+.text_main{
+  color:rgba(54, 134, 214, 1);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 0 4px #fff;
+  p{
+    font-size: 23px;
+    color: aqua;
+    text-shadow: 1px 0 4px #000  }
+}
